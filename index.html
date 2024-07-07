@@ -9,13 +9,17 @@
 
 <body>
     ［宿題］偶数と奇数のチェック
+    <p class="line1"></p>
+    <p class="line2"></p>
     <script>
         let a = Number(prompt("Nhập vào một số nguyên"));
-        if (a % 2 == 0) {
-            alert("Đây là số chẵn")
+        if (a % 2 === 0) {
+            document.querySelector(".line1").innerHTML = "Đây là số chẵn"
+
         }
-        if (a % 2 != 0) {
-            alert("Đây là số lẻ")
+        if (a % 2 !== 0) {
+
+            document.querySelector(".line1").innerHTML = "Đây là số lẻ"
         }
 
     </script>
