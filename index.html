@@ -14,15 +14,12 @@
         ask();
         function ask() {
             let answer = prompt("Nhập vào một số nguyên");
-
-            if (isNaN(answer) || answer.trim() === "") {
+            if (isNaN(answer) || answer === "" || answer == 0 || answer === null) {
                 document.querySelector(".line1").innerHTML = "Vui lòng nhập vào một số hợp lệ.";
                 ask();
                 return;
             }
-
             let integerValue = parseInt(answer, 10);
-
             if (integerValue % 2 == 0) {
                 document.querySelector(".line1").innerHTML = "Đây là số chẵn";
             } else {
