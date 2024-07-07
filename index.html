@@ -12,15 +12,26 @@
     <p class="line1"></p>
     <p class="line2"></p>
     <script>
-        let a = Number(prompt("Nhập vào một số nguyên"));
-        if (a % 2 === 0) {
-            document.querySelector(".line1").innerHTML = "Đây là số chẵn"
+        ask();
+        function ask() {
+            let answer = Number(prompt("Nhập vào một số nguyên"));
+            if (answer != "") {
+                if (answer % 2 === 0) {
+                    document.querySelector(".line1").innerHTML = "Đây là số chẵn"
+                    return;
 
+                }
+                if (answer % 2 !== 0) {
+                    document.querySelector(".line1").innerHTML = "Đây là số lẻ"
+                    return;
+                }
+            }
+            ask();
         }
-        if (a % 2 !== 0) {
 
-            document.querySelector(".line1").innerHTML = "Đây là số lẻ"
-        }
+
+
+
 
     </script>
 </body>
