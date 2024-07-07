@@ -10,29 +10,25 @@
 <body>
     ［宿題］偶数と奇数のチェック
     <p class="line1"></p>
-    <p class="line2"></p>
     <script>
         ask();
         function ask() {
-            let answer = Number(prompt("Nhập vào một số nguyên"));
-            if (answer != "") {
-                if (answer % 2 === 0) {
-                    document.querySelector(".line1").innerHTML = "Đây là số chẵn"
-                    return;
+            let answer = prompt("Nhập vào một số nguyên");
 
-                }
-                if (answer % 2 !== 0) {
-                    document.querySelector(".line1").innerHTML = "Đây là số lẻ"
-                    return;
-                }
+            if (isNaN(answer) || answer.trim() === "") {
+                document.querySelector(".line1").innerHTML = "Vui lòng nhập vào một số hợp lệ.";
+                ask();
+                return;
             }
-            ask();
+
+            let integerValue = parseInt(answer, 10);
+
+            if (integerValue % 2 == 0) {
+                document.querySelector(".line1").innerHTML = "Đây là số chẵn";
+            } else {
+                document.querySelector(".line1").innerHTML = "Đây là số lẻ";
+            }
         }
-
-
-
-
-
     </script>
 </body>
 
